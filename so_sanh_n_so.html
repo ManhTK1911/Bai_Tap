@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so_sanh</title>
+</head>
+<body>
+<script language="javascript">
+
+    function ss()
+
+    {
+        var max;
+        let n = parseInt(prompt("Nhập số n"));
+        var mang = [n];
+        for (var i = 0; i < n; i++)
+        {mang[i] = prompt("Nhập số thứ " + (i+1) + "");}
+        max=mang[0];
+        for (var i=1;i<n;i++)
+            if (mang[i]>max)
+                    max = mang[i];
+                        if (i >= n) {alert("giá trị lớn nhất là " + max + "")}
+            else i++;
+    }
+        ss()
+
+
+</script>
+</body>
+</html>

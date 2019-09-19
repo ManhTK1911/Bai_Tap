@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+
+<input id="n1"> </input>
+<input id="n2"> </input>
+<p><button onclick="test('+')"><h1>Cộng</h1></button></p>
+<p><button onclick="test('-')"><h1>Trừ</h1></button></p>
+<p><button onclick="test('*')"><h1>Nhân</h1></button></p>
+<p><button onclick="test('/')"><h1>Chia</h1></button></p>
+<p id="m"></p>
+<script>
+
+    function test(pheptinh)
+    {
+        let x = parseFloat(document.getElementById("n1").value);
+        let y = parseFloat(document.getElementById("n2").value);
+        let result =0;
+        switch (pheptinh) {
+            case "+": result=x+y;
+                document.getElementById("m").innerHTML = result;
+            break
+
+            case "-": result=x-y;
+                document.getElementById("m").innerHTML = result;
+            break
+
+            case "*": result=x*y;
+                document.getElementById("m").innerHTML = result;
+            break
+
+            case "/": result=x/y;
+                document.getElementById("m").innerHTML = result;
+            break
+        }
+
+    }
+</script>
+</body>
+</html>

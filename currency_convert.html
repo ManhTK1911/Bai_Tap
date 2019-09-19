@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title> demo </title>
+<body>
+<h2>Đổi tiền tệ</h2>
+<h1>Amount</h1>
+<input id="n"> </input>
+
+<p><h1>From Currency</h1></p>
+<select id="select_1" >
+    <option value="23000">Usd</option>
+    <option value="26000">Euro</option>
+    <option value="1">Vnd</option>
+</select>
+
+<h1>To Currency</h1>
+<select id="select_2" >
+    <option value="23000">Usd</option>
+    <option value="26000">Euro</option>
+    <option value="1">Vnd</option>
+</select>
+<p><button onclick="test()"><h1>Convert</h1></button></p>
+
+<p id="m"></p>
+
+<script>
+
+    function test()
+    {
+        let x = document.getElementById("n").value;
+        let y = document.getElementById("select_1").value;
+        let z = document.getElementById("select_2").value;
+        //Tính toán kết quả
+        let a;
+        a=(x*y)/z;
+        document.getElementById("m").innerHTML = a;
+    }
+</script>
+</body>
+</html>
