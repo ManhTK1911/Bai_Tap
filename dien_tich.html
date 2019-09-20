@@ -5,15 +5,36 @@
     <title>area</title>
 </head>
 <body>
+<h1>Cạnh thứ 1:</h1> <input id="cd"> </input>
+<select id="select_1" >
+    <option value="1">cm</option>
+    <option value="10">dm</option>
+    <option value="100">m</option>
+</select>
+
+<h1>Cạnh thứ 2:</h1> <input id="cr"> </input>
+
+<select id="select_2" >
+    <option value="1">cm</option>
+    <option value="10">dm</option>
+    <option value="100">m</option>
+</select>
+<p><button onclick="dt()"><h1> Diện tích theo cm là: </h1></button></p>
+<p id="m"></p>
 <script>
-    function area()
+
+      function dt()
         {
-            let h = parseFloat(prompt("Nhập chiều dài"));
-            let w = parseFloat(prompt("Nhập chiều rộng"));
-            let x=h*w
-            alert(" Diện tích hình chữ nhật là " + x + "")
+            let h = document.getElementById("cd").value;
+            let w = document.getElementById("cr").value;
+            let a = document.getElementById("select_1").value;
+            let b = document.getElementById("select_2").value;
+            //Tính toán kết quả
+            let s;
+            s=h*w*a*b;
+            document.getElementById("m").innerHTML = s;
         }
-    area()
+
 </script>
 
 </body>

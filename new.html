@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+
+</head>
+<style type="text/css">
+    table, th, td {
+        border: 1px solid red;
+        border-collapse: collapse;
+    }
+</style>
+
+<style>
+
+    input[type="button"]
+    {
+        width: 100%;
+    }
+</style>
+<body>
+
+<form >
+    <table>
+        <tr>
+            <td colspan="4">
+                <input id="input" type="text" name="display" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td ><input type="button" name="one" value="1" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="two" value="2" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="three" value="3" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="plus" value="+" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="four" value="4" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="five" value="5" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="six" value="6" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="minus" value="-" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" name="seven" value="7" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="eight" value="8" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="nine" value="9" onclick="nhap(this.value)"></td>
+            <td ><input type="button" name="times" value="*" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="operator" id="clear" name="clear" value="C" onclick="xoa()"></td>
+            <td><input type="button" name="zero" value="0" onclick="nhap(this.value)"></td>
+            <td><input type="button" name="c" value="." onclick="nhap(this.value)"></td>
+            <td><input type="button" name="div" value="/" onclick="nhap(this.value)"></td>
+        </tr>
+        <tr>
+            <td colspan="4"><input type="button" name="doit" value="=" onclick="tt(value)"></td>
+        </tr>
+    </table>
+
+<script>
+    function xoa(value)
+    {
+        document.getElementById("input").value = "";
+    }
+    function nhap(value)
+       {
+              document.getElementById("input").value += value;
+       }
+    function tt(value)
+       {
+              document.getElementById("input").value=eval(document.getElementById("input").value);
+       }
+</script>
+</form>
+</body>
+</html>
