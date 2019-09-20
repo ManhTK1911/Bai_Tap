@@ -2,7 +2,7 @@
 <br lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>input</title>
+    <title>calculator_new</title>
 
 </head>
 <style type="text/css">
@@ -47,18 +47,18 @@
             <td ><input type="button" name="times" value="*" onclick="nhap(this.value)"></td>
         </tr>
         <tr>
-            <td><input type="button" class="operator" id="clear" name="clear" value="C" onclick="xoa()"></td>
+            <td><input type="button" class="operator" id="clear" name="clear" value="C" onclick="delete()"></td>
             <td><input type="button" name="zero" value="0" onclick="nhap(this.value)"></td>
             <td><input type="button" name="c" value="." onclick="nhap(this.value)"></td>
             <td><input type="button" name="div" value="/" onclick="nhap(this.value)"></td>
         </tr>
         <tr>
-            <td colspan="4"><input type="button" name="doit" value="=" onclick="tt(value)"></td>
+            <td colspan="4"><input type="button" name="doit" value="=" onclick="equal(value)"></td>
         </tr>
     </table>
 
 <script>
-    function xoa(value)
+    function delete(value)
     {
         document.getElementById("input").value = "";
     }
@@ -66,7 +66,7 @@
        {
               document.getElementById("input").value += value;
        }
-    function tt(value)
+    function equal(value)
        {
               document.getElementById("input").value=eval(document.getElementById("input").value);
        }
