@@ -14,30 +14,25 @@
 <p><button onclick="test('/')"><h1>Chia</h1></button></p>
 <p id="m"></p>
 <script>
-
     function test(pheptinh)
     {
-        let x,y;
+        let x=parseFloat(document.getElementById("n1").value)
+        let y=parseFloat(document.getElementById("n2").value)
 
-        let result =0;
         switch (pheptinh) {
             case "+": result=x+y;
-                document.getElementById("m").innerHTML = result;
-            break
-
+                document.getElementById("m").innerHTML = result
+                break
             case "-": result=x-y;
                 document.getElementById("m").innerHTML = result;
-            break
-
+                break
             case "*": result=x*y;
                 document.getElementById("m").innerHTML = result;
-            break
-
+                break
             case "/": result=x/y;
                 document.getElementById("m").innerHTML = result;
-            break
+                break
         }
-
     }
 </script>
 </body>

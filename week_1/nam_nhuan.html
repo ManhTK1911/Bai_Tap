@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nam_nhuan</title>
+</head>
+<body>
+        <p>Nhập năm vào đây:<input id="year"></input></p>
+<script>
+    function year()
+        {
+            let y=document.getElementById("year").value;
+            if (y%400==0) alert("Đây là năm nhuận!")
+            else if (y%100==0) document.write("Đây ko là phải năm nhuận!")
+                 else if (y%4==0)  document.write("Đây là năm nhuận!")
+                      else document.write("Đây ko phải là năm nhuận!")
+        }
+
+</script>
+        <p><button onclick="year()">Check</button></p>
+</body>
+</html>
