@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <body>
+<input id="x">
+<button onclick="show()">Click here!</button>
 <div id="result"></div>
 <script>
-    let sout = "<table>";
-    let matrix = new Array(3);
-    for (let i = 0; i < 3; i++) {
-        matrix[i] = new Array(3);
-    }
-
-    for (let i = 0; i < matrix.length; i++) {
-        sout = sout + "<tr height=\"50\" >";
-        for (let j = 0; j < matrix[i].length; j++) {
-            // sout = sout + "<td width= \"50\">" + matrix[i][j] + "</td>";
-            sout = sout + "<td width= \"50\">" + 0 + "</td>";
+    let input = document.getElementById("x");
+    function show() {
+        switch (y=parseInt(input.value)) {
+            case (y>0):
+                document.getElementById("result").innerHTML = ('1');
+                break;
+            case (y<0):
+                document.getElementById("result").innerHTML = ('-11');
+                break;
+            default:
+                document.getElementById("result").innerHTML = ('0');
+                break;
         }
-        sout = sout + "</tr>";
-    }
-    sout += "</table>";
-    document.getElementById("result").innerHTML = sout;
 
+    }
 
 </script>
 </body>

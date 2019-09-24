@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="x">
+<button onclick="show()">Click here!</button>
+<div id="result"></div>
+<script>
+    let browsers = document.getElementById("x");
+    function show() {
+        switch (browsers.value) {
+            case "Edge":
+                document.getElementById("result").innerHTML = ("You've got the Edge!");
+                break;
+            case 'Chrome':
+            case 'Firefox':
+            case 'Safari':
+            case 'Opera':
+                document.getElementById("result").innerHTML = ('Okay we support these browsers too');
+                break;
+            default:
+                document.getElementById("result").innerHTML = ('We hope that this page looks ok!');
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>
