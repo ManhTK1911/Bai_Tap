@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzle</title>
+</head>
+<body>
+
+<img id="myImage1" onclick="changeRandomImg(1)" src="image1/img11.jpg" style="position:absolute;left:0; top:0;"
+     width="300px" height="100px" alt="leo">
+<img id="myImage2" onclick="changeRandomImg(2)" src="image1/img21.jpg" style="position:absolute;left:0; top:100px;"
+     width="300px" height="100px">
+<img id="myImage3" onclick="changeRandomImg(3)" src="image1/img31.jpg" style="position:absolute;left:0; top:200px;"
+     width="300px" height="100px">
+<img id="myImage4" onclick="changeRandomImg(4)" src="image1/img41.jpg" style="position:absolute;left:0; top:300px;"
+     width="300px" height="100px">
+<script>
+    function changeRandomImg(id) {
+        let img = document.getElementById("myImage" + id);
+        let ran = Math.floor(Math.random() * 3) + 1;
+        switch (id) {
+            case 1:
+                img.src = "image1/img1" + ran + ".jpg";
+                break;
+            case 2:
+                img.src = "image1/img2" + ran + ".jpg";
+                break;
+            case 3:
+                img.src = "image1/img3" + ran + ".jpg";
+                break;
+            case 4:
+                img.src = "image1/img4" + ran + ".jpg";
+                break;
+        }
+    }
+    for (i = 1; i <= 4; i++) {
+        changeRandomImg(i)
+    }
+</script>
+</body>
+</html>

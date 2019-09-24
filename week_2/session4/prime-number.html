@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so_nguyen_to</title>
+</head>
+<body>
+<script>
+    let n = prompt("Số lượng số nguyên tố cần hiển thị:")
+
+    function kt_snt(a) {
+        kt = 1;
+        for (i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0 && a > 2) {
+                kt = 0;
+            }
+        }
+        return kt;
+    }
+
+    function snt(b) {
+        let dem = 0;
+        let j = 2;
+        document.write("" + n + " số nguyên tố đầu tiên là: ")
+        while (dem < n) {
+            if (kt_snt(j) == 1) {
+                document.write("<font color=red>");
+                document.write("" + j + " ")
+                dem = dem + 1;
+            }
+            j++;
+        }
+    }
+
+    snt()
+</script>
+</body>
+</html>

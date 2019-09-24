@@ -1,0 +1,56 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bàn cờ đơn giản</title>
+</head>
+<body>
+<div id = "result"></div>
+<script>
+    let b = document.getElementById("result");
+    let sout = "<table>"
+    let postionX = +prompt("Input number row ");
+    let postionY = +prompt("Input number column");
+    //create two-dimention Array
+    let matrix = new Array(postionX);
+    for (let i = 0; i < postionX; i++) {
+        matrix[i] = new Array(postionY);
+    }
+    //gán giá trị cho mảng hai chiều
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            matrix[i][j] = 0;
+        }
+    }
+    // tao file html để hiển thị mảng hai chiều => chỉ là hiển thị không liên quan đến gán giá trị OK
+    for (let i = 0; i < matrix.length; i++) {
+        sout = sout + "<tr height=\"50\" >";
+        for (let j = 0; j < matrix[i].length; j++) {
+            sout = sout + "<td width= \"50\">" + matrix[i][j] + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\" style=\"width: 225px;height: 50px\" onclick=\"changeValue()\">";
+    b.innerHTML = sout;
+    function changeValue() {
+        let changeX = prompt("X = ");
+        let changeY = prompt("Y = ");
+        sout = "<table>";
+        matrix[changeX][changeY] = "x";
+        //Mục đích hiển thị mảng hai chiều thôi
+        for (let i = 0; i < matrix.length; i++) {
+            sout = sout + "<tr height=\"50\" >";
+            for (let j = 0; j < matrix[i].length; j++) {
+                sout = sout + "<td width= \"50\">" + matrix[i][j] + "</td>";
+            }
+            sout = sout + "</tr>";
+        }
+        sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\" style=\"width: 225px;height: 50px\" onclick=\"changeValue()\">";
+        b.innerHTML = sout;
+    }
+</script>
+</body>
+</html>
+
+
+

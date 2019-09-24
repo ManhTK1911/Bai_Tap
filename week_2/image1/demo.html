@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="result"></div>
+
+<script>
+    let sout = "<table>";
+    // let matrix = new Array(3);
+    // for (let i = 0; i < 3; i++) {
+    //     matrix[i] = new Array(3);
+    // }
+    //
+    for (let i = 0; i < matrix.length; i++) {
+        sout = sout + "<tr height=\"50\" >";
+        for (let j = 0; j < matrix[i].length; j++) {
+            // sout = sout + "<td width= \"50\">" + matrix[i][j] + "</td>";
+            sout = sout + "<td width= \"50\">" + 0 + "</td>";
+        }
+        sout = sout + "</tr>";
+    }
+    sout += "</table>";
+    // document.getElementById("result").innerHTML = sout;
+    let sout = "<table>\n" +
+        "    <tr>\n" +
+        "        <td id=\"00\">0</td>\n" +
+        "        <td id=\"01\">0</td>\n" +
+        "        <td id=\"02\">0</td>\n" +
+        "    </tr>\n" +
+        "    <tr>\n" +
+        "        <td>0</td>\n" +
+        "        <td>0</td>\n" +
+        "        <td>0</td>\n" +
+        "    </tr>\n" +
+        "    <tr>\n" +
+        "        <td>0</td>\n" +
+        "        <td>0</td>\n" +
+        "        <td>0</td>\n" +
+        "    </tr>\n" +
+        "</table>"
+    document.getElementById("result").innerHTML = sout;
+
+
+</script>
+</body>
+</html>
