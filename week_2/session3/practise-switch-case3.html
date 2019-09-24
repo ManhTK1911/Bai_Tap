@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="x">
+<button onclick="show()">Click here!</button>
+<div id="result"></div>
+<script>
+    let input = document.getElementById("x");
+    function show() {
+        switch (y=parseInt(input.value)) {
+            case (y>0):
+                document.getElementById("result").innerHTML = ('1');
+                break;
+            case (y<0):
+                document.getElementById("result").innerHTML = ('-11');
+                break;
+            default:
+                document.getElementById("result").innerHTML = ('0');
+                break;
+        }
+
+    }
+
+</script>
+</body>
+</html>
