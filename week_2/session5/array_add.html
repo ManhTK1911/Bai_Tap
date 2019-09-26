@@ -15,15 +15,14 @@
 </body>
 <script>
     let x = 0;
-    let array=Array()
+    let array=[]
     function add() {
         array[x] = document.getElementById("txtValue").value;
         alert("Element: " + array[x] + " Added at index " + x);
         x++;
-        document.getElementById("txtValue ").value = "";
-    }
+       }
     function display() {
-        let e = "<hr/>";
+        let e = "";
         for (let i = 0; i < array.length; i++) {
             e += "Element " + (i + 1) + " = " + array[i] + "<br/>";
         }

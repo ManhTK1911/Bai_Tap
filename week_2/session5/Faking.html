@@ -2,21 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>interest-rate</title>
+    <title>faking</title>
 </head>
 <body>
-<textarea cols="50" rows="5" onkeyup="display()"></textarea><br>
+<textarea cols="50" id="txtArea" rows="5" onkeydown="display()"></textarea><br>
 
 <script>
 
     arr = ["BÀI ", "TẬP ", "NÀY ", "NHẢM ", "NHÍ ", "QUÁ ", "!!!"]
-    let i = 0;
     let count=0;
     function display() {
-        document.write(arr[i]);
-        i++;
+        let txt=document.getElementById("txtArea");
+        txt.value +=arr[count];
         count++;
-        if (count>arr.length) {arr=""};
     }
 
 </script>

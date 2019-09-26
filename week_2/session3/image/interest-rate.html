@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>interest-rate</title>
+</head>
+<body>
+<script>
+    let a=parseInt(prompt("enter number:"));
+    let b=parseInt(prompt("enter month:"));
+    let c=parseInt(prompt("enter interest rate:"));
+    let money=0;
+    let dem=0;
+    while ( dem<b ) {
+        money=a+(a*c)/100;
+        a=money;
+        dem++;
+    }
+    document.write(" " + money + " ")
+</script>
+</body>
+</html>

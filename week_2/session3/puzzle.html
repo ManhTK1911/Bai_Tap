@@ -6,36 +6,58 @@
 </head>
 <body>
 
-<img id="myImage1" onclick="changeRandomImg(1)" src="image/img11.jpg" style="position:absolute;left:0; top:0;"
+<img id="myImage1" onclick="changeRandomImg(1)" src="image/img11.jpg" alt="img11"
+     style="position:absolute;left:0; top:0;"
      width="300px" height="100px" alt="leo">
-<img id="myImage2" onclick="changeRandomImg(2)" src="image/img21.jpg" style="position:absolute;left:0; top:100px;"
+<img id="myImage2" onclick="changeRandomImg(2)" src="image/img21.jpg" alt="img21"
+     style="position:absolute;left:0; top:100px;"
      width="300px" height="100px">
-<img id="myImage3" onclick="changeRandomImg(3)" src="image/img31.jpg" style="position:absolute;left:0; top:200px;"
+<img id="myImage3" onclick="changeRandomImg(3)" src="image/img31.jpg" alt="img31"
+     style="position:absolute;left:0; top:200px;"
      width="300px" height="100px">
-<img id="myImage4" onclick="changeRandomImg(4)" src="image/img41.jpg" style="position:absolute;left:0; top:300px;"
+<img id="myImage4" onclick="changeRandomImg(4)" src="image/img41.jpg" alt="img41"
+     style="position:absolute;left:0; top:300px;"
      width="300px" height="100px">
 <script>
     function changeRandomImg(id) {
         let img = document.getElementById("myImage" + id);
         let ran = Math.floor(Math.random() * 4) + 1;
+
         switch (id) {
             case 1:
                 img.src = "image/img1" + ran + ".jpg";
+                img.alt="image/img11" + ran;
                 break;
             case 2:
                 img.src = "image/img2" + ran + ".jpg";
+                img.alt="image/img21" + ran;
                 break;
             case 3:
                 img.src = "image/img3" + ran + ".jpg";
+                img.alt="image/img31" + ran;
                 break;
             case 4:
                 img.src = "image/img4" + ran + ".jpg";
+                img.alt="image/img41" + ran;
                 break;
         }
     }
+
     for (i = 1; i <= 4; i++) {
         changeRandomImg(i)
+        check()
     }
+
+    function check() {
+        function check() {
+            let img1 = document.getElementById("myImage1").alt;
+            let img2 = document.getElementById("myImage2").alt;
+            let img3 = document.getElementById("myImage3").alt;
+            let img4 = document.getElementById("myImage4").alt;
+            if (img1 == "img11" && img2 == "img21" && img3 == "img31" && img4 == "img41") {
+                alert("Done!");
+            }
+        }}
 </script>
 </body>
 </html>

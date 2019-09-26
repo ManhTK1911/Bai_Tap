@@ -6,13 +6,14 @@
 <div id="result"></div>
 <script>
     let input = document.getElementById("x");
+
     function show() {
-        switch (y=parseInt(input.value)) {
-            case (y>0):
+        switch (y = parseInt(input.value)) {
+            case (y > 0):
                 document.getElementById("result").innerHTML = ('1');
                 break;
-            case (y<0):
-                document.getElementById("result").innerHTML = ('-11');
+            case (y < 0):
+                document.getElementById("result").innerHTML = ('-1');
                 break;
             default:
                 document.getElementById("result").innerHTML = ('0');

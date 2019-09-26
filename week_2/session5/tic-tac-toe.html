@@ -19,7 +19,6 @@ Column: <input id="Y">
     //gán giá trị cho mảng hai chiều
     for (let i = 0; i < a.length; i++) {
         for (let j = 0; j < a[i].length; j++) {
-            document.write("<font color=red>");
             a[i][j] = ".";
         }
     }
@@ -33,11 +32,11 @@ Column: <input id="Y">
     }
     sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\"  onclick=\"changeValue()\">";
     b.innerHTML = sout;
-    let turn = 1;
+        let turn = 1;
 
-    function changeValue() {
-        let changeX = document.getElementById("X").value;
-        let changeY = document.getElementById("Y").value;
+        function changeValue() {
+       let changeX=document.getElementById("X").value;
+            let changeY=document.getElementById("Y").value;
 
         sout = "<table>";
         if (turn == 1) {
@@ -57,7 +56,25 @@ Column: <input id="Y">
         }
         sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\"  onclick=\"changeValue()\">";
         b.innerHTML = sout;
+
+        function check() {
+            for (i = 0; i < length.a; i++) {
+                for (j = 0; j < length.a; j++) {
+                    if (
+                        ((a[i][j] = a[i][j + 1]) && (a[i][j + 1] = a[i][j + 2]) && (a[i][j + 2] = "x"))
+                        || ((a[i][j] = a[i + 1][j]) && (a[i + 1][j] = a[i + 2][j]) && (a[i + 2][j] = "x"))
+                        || ((a[i][j] = a[i + 1][j + 1]) && (a[i + 1][j + 1] = a[i + 2][j + 2]) && (a[i + 2][j + 2] = "x"))
+                        || ((a[i + 2][j] = a[i + 1][j + 1]) && (a[i + 1][j + 1] = a[i][j + 2]) && (a[i][j + 2] = "x"))
+                    )
+                        alert("Success!")
+                }
+
+            }
+        }
+
     }
+
+
 </script>
 </body>
 </html>

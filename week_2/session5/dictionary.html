@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dictionary</title>
+
+</head>
+<body>
+
+<script>
+    let x = prompt("Enter a word");
+    let n = 0;
+    let a = ["start", "finish", "top", "bot", "left", "right"];
+    let b = ["Bắt đầu", "Kết thúc", "Trên", "Dưới", "Trái", "Phải"];
+    for (i = 0; i < a.length; i++) {
+        if (a[i] == x) {
+            document.write(b[i]);
+            n = 1;
+        }
+    }
+    if (n == 0) document.write("No result!");
+
+</script>
+</body>
+</html>
