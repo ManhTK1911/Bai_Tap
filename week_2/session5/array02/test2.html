@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo1"></p>
+
+<p id="demo2"></p>
+
+<p id="demo3"></p>
+
+<script>
+
+    function TaoSoNgauNhien(min, max){
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+    var a = TaoSoNgauNhien(1, 10);
+    var b = TaoSoNgauNhien(3, 8);
+    var c = TaoSoNgauNhien(2, 5);
+
+    document.getElementById("demo1").innerHTML = a;
+    document.getElementById("demo2").innerHTML = b;
+    document.getElementById("demo3").innerHTML = c;
+
+</script>
+
+</body>
+</html>

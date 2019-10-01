@@ -1,66 +1,43 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>tic-tac-toe</title>
+    <title>table</title>
+    <link rel="stylesheet" href="css.css">
 </head>
 <body>
 <div id="result"></div>
 Row: <input id="X">
 Column: <input id="Y">
+<input type="button" value="ChangeValue" onclick="changeValue()">
 <script>
-    let b = document.getElementById("result");
-    let n = 1;
-    let sout = "<table>"
-    //create two-dimention Array
-    let a = new Array();
-    for (let i = 0; i < 10; i++) {
-        a[i] = new Array(10);
-    }
-    //gán giá trị cho mảng hai chiều
-    for (let i = 0; i < a.length; i++) {
-        for (let j = 0; j < a[i].length; j++) {
-            document.write("<font color=red>");
-            a[i][j] = ".";
+    let arr = [];
+
+    function print() {
+        document.write("<table border=1>")
+        for (i = 0; i <= 9; i++) {
+            document.write("<tr>")
+            for (j = 0; j <= 9; j++) {
+
+                document.write("< td >." )
+            }
         }
     }
-    // tao file html để hiển thị mảng hai chiều => chỉ là hiển thị không liên quan đến gán giá trị OK
-    for (let i = 0; i < a.length; i++) {
-        sout = sout + "<tr height=\"50\" >";
-        for (let j = 0; j < a[i].length; j++) {
-            sout = sout + "<td width= \"50\">" + a[i][j] + "</td>";
-        }
-        sout = sout + "</tr>";
-    }
-    sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\"  onclick=\"changeValue()\">";
-    b.innerHTML = sout;
+
+    print()
     let turn = 1;
 
     function changeValue() {
         let changeX = document.getElementById("X").value;
         let changeY = document.getElementById("Y").value;
-
-        sout = "<table>";
         if (turn == 1) {
-            a[changeX][changeY] = "x";
+            arr[changeX][changeY] = "x";
             turn = 2;
         } else {
-            a[changeX][changeY] = "o";
+            arr[changeX][changeY] = "o";
             turn = 1;
         }
-        //Mục đích hiển thị mảng hai chiều thôi
-        for (let i = 0; i < a.length; i++) {
-            sout = sout + "<tr height=\"50\" >";
-            for (let j = 0; j < a[i].length; j++) {
-                sout = sout + "<td width= \"50\">" + a[i][j] + "</td>";
-            }
-            sout = sout + "</tr>";
-        }
-        sout = sout + "</table>" + "<input type=\"button\" value=\"Change Value\"  onclick=\"changeValue()\">";
-        b.innerHTML = sout;
     }
 </script>
 </body>
 </html>
-
-
-

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>feet_meters</title>
+<body>
+<p>
+<h1>Input</h1></p>
+<label><input id="number"> </input></label>
+<p>
+<h1>From</h1></p>
+<select id="select_1">
+    <option value="1">feet</option>
+    <option value="3.279">meters</option>
+</select>
+<h1>To</h1>
+<select id="select_2">
+    <option value="1">feet</option>
+    <option value="3.279">meters</option>
+</select>
+<p>
+    <button onclick="convert()"><h1>Converter</h1></button>
+</p>
+<p id="m"></p>
+<script>
+    function convert() {
+        let x = document.getElementById("number").value;
+        let y = document.getElementById("select_1").value;
+        let z = document.getElementById("select_2").value;
+        let result;
+        result = (x * y) / z;
+        document.getElementById("m").innerHTML = result;
+    }
+</script>
+</body>
+</html>

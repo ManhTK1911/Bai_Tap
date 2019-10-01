@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>testPz</title>
+</head>
+<body>
+<img id="img1" src="image1/aries1.jpg" onclick="changeImg(1)" alt="aries" style="position:absolute;left:0; top:0;">
+<img id="img2" src="image1/aries2.jpg" onclick="changeImg(2)" alt="aries" style="position:absolute;left:0; top:134px;">
+<img id="img3" src="image1/aries3.jpg" onclick="changeImg(3)" alt="aries" style="position:absolute;left:0; top:260px;">
+<img id="img4" src="image1/aries4.jpg" onclick="changeImg(4)" alt="aries" style="position:absolute;left:0; top:380px;">
+<script>
+    function changeImg(id) {
+        let img = document.getElementById("img" + id);
+        if (img.src.match("aries")) {
+            img.alt = "leo";
+        } else if (img.alt == "leo") {
+            img.alt = "scorpio";
+        } else if (img.alt == "scorpio") {
+            img.alt = "sagittarious";
+        } else {
+            img.alt = "aries";
+        }
+        img.src = "image1/" + img.alt + id + ".jpg";
+        check();
+    }
+    function check() {
+        let img1 = document.getElementById("img1");
+        let img2 = document.getElementById("img2");
+        let img3 = document.getElementById("img3");
+        let img4 = document.getElementById("img4");
+        if ((img1.alt==img2.alt) && (img2.alt==img3.alt) && (img3.alt==img4.alt)){
+            alert("Done!")
+        }
+    }
+</script>
+</body>
+</html>

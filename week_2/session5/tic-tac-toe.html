@@ -58,8 +58,8 @@ Column: <input id="Y">
         b.innerHTML = sout;
 
         function check() {
-            for (i = 0; i < length.a; i++) {
-                for (j = 0; j < length.a; j++) {
+            for (i = 0; i < a.length; i++) {
+                for (j = 0; j < a.length; j++) {
                     if (
                         ((a[i][j] = a[i][j + 1]) && (a[i][j + 1] = a[i][j + 2]) && (a[i][j + 2] = "x"))
                         || ((a[i][j] = a[i + 1][j]) && (a[i + 1][j] = a[i + 2][j]) && (a[i + 2][j] = "x"))

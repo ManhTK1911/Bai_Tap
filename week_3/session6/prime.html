@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>prime</title>
+</head>
+<body>
+<script>
+    function checkPrime(a) {
+        check = 1;
+        for (i = 2; i <= Math.sqrt(a); i++) {
+            if (a % i == 0 && a > 2) {
+                check = 0;
+            }
+        }
+        return check;
+    }
+    for (j = 2; j < 1000; j++) {
+        if (checkPrime(j) == 1) {
+            document.write(" <font color=red>" + j + "   ")
+            j++;
+        }
+    }
+</script>
+</body>
+</html>

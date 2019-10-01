@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise12</title>
+</head>
+<body>
+<script>
+    let money = parseFloat(prompt("enter money:"));
+    let month = parseFloat(prompt("enter month:"));
+    let interest_rate = parseFloat(prompt("enter interest rate:"));
+    let count = 0;
+    while (count < month) {
+        money = money + (money * interest_rate / 100);
+        count++;
+    }
+       document.write("Total is: " + money + " ")
+
+</script>
+</body>
+</html>

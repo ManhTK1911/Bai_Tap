@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Palindrome</title>
+</head>
+<body>
+<script>
+    function isPalindrome(str) {
+        let check = 0; count = 0; i = 0;
+        str = str.split("");
+        let j = str.length;
+        let x = Math.floor(str.length / 2);
+        console.log(str[i]);
+        while (i < x) {
+            if (str[i] = str[j - 1]) {
+                count++;
+                i++;
+                j--;
+                if (count = x) {
+                    check = 1;
+                }
+            }
+            return check;
+        }
+    }
+    let a = prompt("enter string:");
+    if (isPalindrome(a) == 1) {
+        alert("Palindrome!")
+    } else alert("Don't Palindrome!")
+</script>
+</body>
+</html>

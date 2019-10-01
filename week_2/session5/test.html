@@ -1,24 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>interest-rate</title>
+    <title>test</title>
 </head>
 <body>
-<textarea cols="50" rows="5" onkeyup="display()"></textarea><br>
-
 <script>
-
-    arr = ["BÀI ", "TẬP ", "NÀY ", "NHẢM ", "NHÍ ", "QUÁ ", "!!!"]
-    let i = 0;
-    let count=0;
-    function display() {
-        document.write(arr[i]);
-        i++;
-        count++;
-        if (count>arr.length) {arr=""};
+    function student(name, age, class_) {
+        this.NAME = name;
+        this.AGE = age;
+        this.CLASS_ = class_;
+        this.INFORMATION = function () {
+            return this.NAME + ', ' + this.AGE + ' years old, ' + this.CLASS_;
+        }
     }
+    let student_1 = new student("TKM", 28, "C0919I1");
+    let student_2 = new student("HTT", 20, "YKV");
+    let infor_stunden1 = student_1.INFORMATION();
+    alert(infor_stunden1);
+    let infor_stunden2 = student_2.INFORMATION();
+    alert(infor_stunden2);
 
+    // function student(name, age) {
+    //     this.NAME = name;
+    //     this.AGE = age;
+    //     this.HELLO = function () {
+    //         alert("hello teacher!!!")
+    //     }
+    // }
+    //
+    // function teacher(name, age) {
+    //     this.NAME = name;
+    //     this.AGE = age;
+    //     this.STUDENT = new student("HTT", 20);
+    // }
+    //
+    // let teacher_1 = new teacher("TKM", 28);
+    // teacher_1.STUDENT.HELLO();
 </script>
 </body>
 </html>
