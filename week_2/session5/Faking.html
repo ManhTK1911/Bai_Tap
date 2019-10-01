@@ -5,7 +5,7 @@
     <title>faking</title>
 </head>
 <body>
-<textarea cols="50" id="txtArea" rows="5" onkeydown="display()"></textarea><br>
+<textarea cols="50" id="txtArea" rows="5" onkeypress="display()"></textarea><br>
 
 <script>
 
@@ -15,7 +15,7 @@
         let txt=document.getElementById("txtArea");
         txt.value +=arr[count];
         count++;
-        if (count>arr.length){reset txt}
+
     }
 
 </script>
