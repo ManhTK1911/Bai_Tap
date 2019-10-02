@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recursive</title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("enter number:"));
+    alert("" + powerOf10(number) + "");
+    function powerOf10(n) {
+        let total = 0;
+        if (n == 0) {
+            return 1;
+        } else return (total += powerOf10(n - 1) * 10);
+    }
+
+    // function fibonacci(num) {
+    //     if (num <= 1) {
+    //         return num;
+    //     }
+    //     return fibonacci(num - 1) + fibonacci(num - 2);
+    // }
+</script>
+</body>
+</html>

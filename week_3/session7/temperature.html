@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temperature</title>
+</head>
+<body>
+<script>
+    function TEMPERATURE(c) {
+        this.c=parseInt(c);
+        this.getF = function () {
+            return this.c*1.8 + 32;
+        }
+        this.getK = function () {
+            return this.c + 273.15;
+        }
+    }
+    let numC=prompt("enter number:")
+    let temperature = new TEMPERATURE(numC);
+    let temperatureF = temperature.getF();
+    let temperatureK = temperature.getK();
+    alert(" "+numC+" equal "+temperatureF+" F; equal "+temperatureK+" K ")
+</script>
+</body>
+</html>

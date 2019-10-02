@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise6</title>
+</head>
+<body>
+<script>
+
+    let number = prompt("enter number:");
+    if (check(number) == 1) alert("true")
+    else alert("false");
+    function check(num) {
+        check_num = true;
+        if (num < 0) {
+            check_num = false;
+        }
+        return check_num;
+    }
+</script>
+</body>
+</html>

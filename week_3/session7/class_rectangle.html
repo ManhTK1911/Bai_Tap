@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rectangle</title>
+</head>
+<body>
+<script>
+    function RECTANGLE(length, width) {
+        this.length = length;
+        this.width = width;
+        this.getAcreage = function () {
+            return length*width;
+        }
+        this.getParameter = function () {
+            return 2 * (length + width);
+        }
+    }
+    let rectangle = new RECTANGLE(6, 5);
+    let acreage = rectangle.getAcreage();
+    let parameter = rectangle.getParameter();
+    alert("Parameter is: " + parameter + "; Acreage is: " + acreage + " ");
+</script>
+</body>
+</html>

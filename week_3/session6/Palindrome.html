@@ -7,25 +7,18 @@
 <body>
 <script>
     function isPalindrome(str) {
-        let check = 0; count = 0; i = 0;
+        let check = true;
         str = str.split("");
-        let j = str.length;
         let x = Math.floor(str.length / 2);
-        console.log(str[i]);
-        while (i < x) {
-            if (str[i] = str[j - 1]) {
-                count++;
-                i++;
-                j--;
-                if (count = x) {
-                    check = 1;
-                }
+        for (i = 0; i < x; i++) {
+            if (str[i] != str[str.length - 1 - i]) {
+                check = false;
             }
-            return check;
         }
+        return check;
     }
     let a = prompt("enter string:");
-    if (isPalindrome(a) == 1) {
+    if (isPalindrome(a) == true) {
         alert("Palindrome!")
     } else alert("Don't Palindrome!")
 </script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Mobile(name) {
+        this.name = name;
+        this.status = "off";//
+        this.battery = 5;
+        this.messageComposing="";//tin nhắn đang soạn
+        this.sent = new Array();//lưu tin nhắn đã gửi
+        this.inbox = new Array();//lưu tin nhắn đã nhận
+        this.getName = function () {
+            return this.name;
+        }
+        this.isMobileOn = function () {// kiểm tra trạng thái điện thoại on hay off
+            if(this.status == "on"){
+                return true;
+            }
+            else
+                return false;
+        };
+        this.setOn = function () {// chức năng tắt điện thoại
+            this.status = "on";
+        };
+        this.setOff = function () {// Chức năng mở điện thoại
+            this.status = "off";
+        };
+        this.writeMessage = function (message) {
+            this.messageComposing = message;
+            this.battery--;
+            return this.messageComposing;
+        }
+        this.sendMessage = function (message, model) {
+            this.sent.push(message);//lưu trữ lại tin nhắn đã gửi
+            model.inbox.push(message);//lưu trữ tại hòm thư đến của điện thoại nhận
+            this.battery--;
+        };
+        this.viewMessage = function () {//xem tin nhắn tại hòm thư đến
+            alert("Tin nhắn tại hòm thư đến của "+ this.name +" là: " + this.inbox[0]);
+            this.battery--;
+        };
+        this.viewMessageSent = function () {
+            alert("Tin nhắn đã được gửi của " + this.getName() + " là: "+ this.sent[0]);
+            this.battery--;
+        }
+        this.getBatteryInfo = function () {
+            return this.battery;
+        }
+        this.chargeBattery = function () {
+            this.battery = 100;
+        }
+    }
+    //tạo hai điện thoại iphone và nokia
+    let iphone = new Mobile("iphone");
+    let nokia = new Mobile("nokia");
+    //bật tắt điện thoại
+    nokia.setOn();
+    if(nokia.isMobileOn() && nokia.getBatteryInfo() > 0) {
+        //soạn tin nhắn tại nokia
+        nokia.writeMessage("TUAN");
+        alert("Số pin sau khi soạn tin nhắn của "+nokia.getName()+ " là: " + nokia.getBatteryInfo());
+        //gửi tin nhắn đến iphone
+        nokia.sendMessage(nokia.messageComposing, iphone);
+        alert("Số pin sau khi gửi tin của "+ nokia.getName() + " là: " + nokia.getBatteryInfo());
+        //xem tin nhắn đã gửi tại nokia
+        nokia.viewMessageSent();
+        alert("Số pin sau khi xem tin nhắn đã gửi của "+ nokia.getName() + " là: " + nokia.getBatteryInfo())
+        //số pin sau khi sạc
+        nokia.chargeBattery();
+        alert("Số pin sau sạc pin của "+nokia.getName()+ " là: " + nokia.getBatteryInfo());
+        //xem tin nhắn tại hòm thư đến của iphone
+        iphone.viewMessage();
+        alert("Số pin của " + iphone.getName() + " sau khi xem tin nhắn tại hòm thư đến "+ iphone.getBatteryInfo());
+    } else if(nokia.getBatteryInfo() <=0){
+        alert("Yêu cầu sạc điện thoại");
+    }
+    else
+    {
+        alert("Yêu cầu bật điện thoại");
+    }
+</script>
+</body>
+</html>

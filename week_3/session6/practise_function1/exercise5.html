@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise5</title>
+</head>
+<body>
+<script>
+    player = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    star = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let name = prompt("enter name:");
+    check(name);
+    function check(name1) {
+        let count = 0;
+        for (i = 0; i < 7; i++) {
+            if (player[i] == name1) {
+                j = i;
+                alert(star[j]);
+                return;
+            } else count++;
+        }
+        if (count = 7) {
+            alert("no result!")
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise8</title>
+</head>
+<body>
+<script>
+    let arr = ["day", 19, "month", 11, "year", 1991];
+    REVERSE(arr);
+
+    function REVERSE(array) {
+        newArr = [];
+        let j = array.length - 1;
+        for (i = 0; i < array.length; i++) {
+            newArr[j] = array[i];
+            j--;
+        }
+        alert(newArr);
+    }
+</script>
+</body>
+</html>
