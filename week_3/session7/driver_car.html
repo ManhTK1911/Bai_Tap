@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>move</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+
+    function Hero(image, top, left, size) {
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.getHeroElement = function () {
+            return '<img width="' + this.size + '"' +
+                ' height="' + this.size + '"' +
+                ' src="' + this.image + '"' +
+                ' style="top: ' + this.top + 'px; left:' + this.left + 'px;position:absolute;" />';
+        }
+        this.move = function () {
+            // this.left += Math.floor(Math.random()*100+60);
+            this.top -= 10;
+        }
+    }
+    let hero = new Hero('pikachu.png', window.innerHeight-100, 500, 100);
+    function speed() {
+
+    }
+    function start() {
+        if (hero.top > 0) {
+            hero.move();
+        }
+        document.getElementById('game').innerHTML = hero.getHeroElement();
+        setTimeout(start, 500)
+    }
+    start();
+</script>
+</body>
+</html>

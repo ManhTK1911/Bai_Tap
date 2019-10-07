@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Adam
+<button onclick="Adam.eat(apple)">Eat</button>
+<input disabled id="Adamweight">
+Eva
+<button onclick="Eva.eat(apple)">Eat</button>
+<input disabled id="Evaweight">
+Apple <input disabled id="Appleweight">
+<script>
+    const Adamweight = document.getElementById("Adamweight");
+    const Evaweight = document.getElementById("Evaweight");
+    const Appleweight = document.getElementById("Appleweight");
+    let Apple = function (weight, element) {
+        this.weight = weight;
+        this.decrease = function () {
+            this.weight--;
+            this.display();
+        }
+        this.isEmpty = function () {
+            return this.weight <= 0 ? true : false;
+        }
+        this.display = function () {
+            element.value = this.weight;
+        }
+    }
+    let Human = function (name, gender, weight, element) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.element = element;
+        this.eat = function (apple) {
+            if (!apple.isEmpty()) {
+                apple.decrease();
+                this.increaseWeight();
+            } else {
+                alert("The apple is empty");
+            }
+            this.display();
+        };
+        this.increaseWeight = function () {
+            this.weight++;
+        }
+        this.display = function () {
+            this.element.value = this.weight;
+        }
+    }
+
+    let apple = new Apple(20, Appleweight);
+    let Adam = new Human("Adam", "Male", 80, Adamweight);
+    let Eva = new Human("Eva", "Female", 60, Evaweight);
+</script>
+</body>
+</html>

@@ -15,6 +15,10 @@
     ctx.lineTo(200, 100);
     ctx.stroke();
 
+    // // draw rectangle
+    // ctx.fillStyle = "#ff00c1";
+    // ctx.fillRect(0,0,150,75);
+
     // draw circle
     ctx.beginPath();
     ctx.arc(95,50,40,0,2*Math.PI);
@@ -22,7 +26,8 @@
 
     // insert text
     ctx.font = "30px Arial";
-    ctx.fillText("TKM-C0919I1",10,50);
+    ctx.fillText("TKM",10,50);
+    ctx.strokeText("C0919I1",80,50);
 
    // // Create gradient
    //  var grd = ctx.createLinearGradient(0,0,200,0);
@@ -41,6 +46,21 @@
    //  // Fill with gradient
    //  ctx.fillStyle = grd;
    //  ctx.fillRect(10,10,150,80);
+
+// <p>Image to use:</p>
+//     <img id="scream" src="ghost.jpg" alt="The Scream" width="220" height="277">
+//         <p>Canvas to fill:</p>
+//     <canvas id="myCanvas" width="250" height="300"
+//     style="border:1px solid #d3d3d3;">
+//         Trình duyệt của bạn không hỗ trợ canvas.
+//     </canvas>
+//     <p><button onclick="myCanvas()">Thêm ảnh vào canvas</button></p>
+//     function myCanvas() {
+//         var c = document.getElementById("myCanvas");
+//         var ctx = c.getContext("2d");
+//         var img = document.getElementById("scream");
+//         ctx.drawImage(img,10,10);}
+
 </script>
 </body>
 </html>

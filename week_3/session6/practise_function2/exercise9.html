@@ -7,18 +7,18 @@
 <body>
 <script>
     let str="trankhacmanh";
-    let chart = "a";
+    let chart = "h";
     find(str, chart);
 
     function find(str1, chart1) {
         str1 = str1.split("");
         let count=0;
         for (let i = 0; i < str1.length; i++) {
-            if (str1[i] === chart1) {
+            if (str1[i] == chart1) {
                 count++;
             }
         }
-        if (count=0) {alert("-1")}
+        if (count==0) {alert("-1")}
         else {alert("" + count + "")};
     }
 </script>

@@ -4,22 +4,62 @@
     <meta charset="UTF-8">
     <title>rectangle</title>
 </head>
+<!--Hight: <input id="h">-->
+<!--Width: <input id="w"> <br></br>-->
+<!--<button onclick="create()">Create</button>-->
+<!--<br></br>-->
+<!--<button onclick="calculate()">Calculate</button>-->
+<!--<br></br>-->
+<div id="m"></div>
+<canvas id="myCanvas" width="800" height="400" style="border:1px solid red;"></canvas>
 <body>
 <script>
-    function RECTANGLE(length, width) {
-        this.length = length;
+
+    function Rectangle(height, width) {
+        this.height = height;
         this.width = width;
         this.getAcreage = function () {
-            return length*width;
+            return this.height * this.width;
         }
         this.getParameter = function () {
-            return 2 * (length + width);
+            return 2 * (this.height + this.width);
+        }
+        this.setHeight = function (height) {
+            this.height = height;
+        }
+        this.setWidth = function (width) {
+            this.width = width;
         }
     }
-    let rectangle = new RECTANGLE(6, 5);
+
+    let rectangle = new Rectangle();
+    rectangle.setHeight(50);
+    rectangle.setWidth(30);
     let acreage = rectangle.getAcreage();
     let parameter = rectangle.getParameter();
-    alert("Parameter is: " + parameter + "; Acreage is: " + acreage + " ");
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    document.getElementById("m").innerHTML = ("Parameter is: " + parameter + " <br>  Acreage is: " + acreage + "");
+
+    // function getRandomColor() {
+    //     let red = getRandomHex();
+    //     let green = getRandomHex();
+    //     let blue = getRandomHex();
+    //     return "rgb(" + red + "," + blue + "," + green + ")";
+    // }
+
+    function createRectangle() {
+        ctx.fillStyle = "#ff00c1";
+        let x = Math.floor(Math.random() * 800 + 500);
+        let y = Math.floor(Math.random() * 400 + 100);
+        ctx.fillRect(x, y, rectangle.height, rectangle.width);
+    }
+    function createMutiRectangle() {
+        for (let i=0;i<10;i++){
+            createRectangle();
+        }
+    }
+    createMutiRectangle();
 </script>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ecercise8</title>
+</head>
+<body>
+<button onclick="play()">Play</button>
+<script>
+    function play() {
+        let num = parseInt(prompt("enter your number:"));
+        let ran = Math.floor(Math.random() * 10 + 1);
+        let count=0;
+        if (ran > num) {
+            alert(" Our number: "+ran+" -> your number: "+num+" -> less than our number");
+            count++;
+            if (count>3)
+        } else if (ran < num) {
+            alert(" Our number: "+ran+" -> your number: "+num+" -> biger than our number")
+        } else alert("congratulations!")
+    }
+</script>
+</body>
+</html>

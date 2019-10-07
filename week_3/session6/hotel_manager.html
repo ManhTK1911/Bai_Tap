@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hotel_manager</title>
+</head>
+<body>
+<input id="product1">
+<button id="add" onclick="add()">Add</button>
+<h1>Display all product</h1>
+Product name:<br>
+<script>
+    let product = ["Sony", "Iphone", "Samsung", "Oppo", "Nokia", "Xiaomi"];
+    let l=product.length;
+
+    function show() {
+        for (i=0;i<l;i++){
+            document.write("<br>")
+            document.write(product[i])
+        }
+    }
+    show()
+    function add() {
+
+    }
+</script>
+</body>
+</html>
