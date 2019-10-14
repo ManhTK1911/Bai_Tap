@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise04</title>
+</head>
+<body>
+<script>
+    function sum(arr) {
+        let total = 0;
+        for (let i = 0; i < arr.length; i++) {
+            total += arr[i][i];
+        }
+        return total;
+    }
+
+    let array = [[1, 2, 3], [2, 3, 4], [3, 4, 5]];
+    console.log(sum(array));
+</script>
+</body>
+</html>

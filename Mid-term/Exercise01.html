@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>prime</title>
+    <title>exercise01</title>
 </head>
 Enter a number: <input id="number">
+<button type="button" onclick="prime()">Show</button>
 <body>
+<p id="m"></p>
 <script>
-    let num = prompt("Số lượng số nguyên tố cần hiển thị:")
     function checkPrime(num) {
         check = 1;
         for (i = 2; i <= Math.sqrt(num); i++) {
@@ -17,10 +18,12 @@ Enter a number: <input id="number">
         }
         return check;
     }
+
     function prime() {
+        let num = document.getElementById("number").value;
         let count = 0;
         let j = 2;
-        document.write("" + num + " số nguyên tố đầu tiên là: ")
+        document.write("" + num + " first prime number is: ");
         while (count < num) {
             if (checkPrime(j) == 1) {
                 document.write("<font color=red>" + j + " ")
@@ -29,7 +32,6 @@ Enter a number: <input id="number">
             j++;
         }
     }
-    prime()
 </script>
 </body>
 </html>
