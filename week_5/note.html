@@ -8,7 +8,8 @@
 <div id="create">
     <input id="inputTitle">
     <textarea id="inputContent"></textarea>
-    <button type="button" onclick="addNote(newTitle, newContent)">Create
+    <button type="button" onclick="addNote(document.getElementById('inputTitle').value,
+        document.getElementById('inputContent').value)">Create
     </button>
 </div>
 <div id="board"></div>
@@ -49,8 +50,7 @@
     };
     let board = new Board();
     let display = document.getElementById("board");
-    let newTitle = document.getElementById('inputTitle').value;
-    let newContent = document.getElementById('inputContent').value;
+
     function addNote(title, content) {
         let note = new StickyNote("green");
         note.addTitle(title);

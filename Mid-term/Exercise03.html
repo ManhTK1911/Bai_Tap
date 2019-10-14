@@ -6,15 +6,18 @@
 </head>
 <body>
 <script>
+    let date = new Date();
+    let year = date.getFullYear();
+
     function age(num) {
-        if (num > 2019) {
+        if (num > year) {
             alert("illegal");
         } else {
-            Age = 2019 - num;
+            Age = year - num;
             alert(" " + Age + " ");
         }
     };
-    let number = prompt("enter age:");
+    let number = prompt("enter birth year:");
     age(number);
 </script>
 </body>
