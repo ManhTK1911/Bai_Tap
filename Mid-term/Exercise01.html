@@ -21,13 +21,11 @@ Enter a number: <input id="number">
 
     function prime() {
         let num = document.getElementById("number").value;
-        let count = 0;
         let j = 2;
-        document.write("" + num + " first prime number is: ");
-        while (count < num) {
+        document.write("prime number less " + num + " is: ");
+        while (j < num) {
             if (checkPrime(j) == 1) {
                 document.write("<font color=red>" + j + " ")
-                count = count + 1;
             }
             j++;
         }
