@@ -1,0 +1,29 @@
+body {
+    background: darkkhaki;
+}
+h1 {
+    background: #f6411f;
+    text-align: center;
+}
+div {
+    width: 300px;
+    background: cyan;
+    margin: 0;
+}
+button{
+    width: 50px;
+    height: 50px;
+    background: #d61b06;
+    text-align: center;
+
+}
+textarea {
+    background: lawngreen;
+}
+#btn1 {
+    width: 70px;
+    background: #2821f6;
+}
+#myTable {
+    border: 1px black;
+}

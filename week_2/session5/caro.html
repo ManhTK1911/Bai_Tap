@@ -2,42 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>table</title>
-    <link rel="stylesheet" href="css.css">
+    <title>Caro Chess</title>
 </head>
+<style>
+    .cells{
+        text-align: center;
+        border: .1px solid #000000;
+    }
+</style>
 <body>
-<div id="result"></div>
-Row: <input id="X">
-Column: <input id="Y">
-<input type="button" value="ChangeValue" onclick="changeValue()">
-<script>
-    let arr = [];
-
-    function print() {
-        document.write("<table border=1>")
-        for (i = 0; i <= 9; i++) {
-            document.write("<tr>")
-            for (j = 0; j <= 9; j++) {
-
-                document.write("< td >." )
-            }
-        }
-    }
-
-    print()
-    let turn = 1;
-
-    function changeValue() {
-        let changeX = document.getElementById("X").value;
-        let changeY = document.getElementById("Y").value;
-        if (turn == 1) {
-            arr[changeX][changeY] = "x";
-            turn = 2;
-        } else {
-            arr[changeX][changeY] = "o";
-            turn = 1;
-        }
-    }
-</script>
+<div id = "GameBoard"></div>
+<script src="caro.js"></script>
 </body>
 </html>

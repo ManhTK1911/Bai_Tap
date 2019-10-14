@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="sticky_note.css">
+    <script src="sticky_note.js"></script>
+</head>
+<html lang="en">
+<h1>Sticky Note</h1>
+<button id="btn1" onclick="create()">Create Note</button><br></br>
+<body>
+<div id ="div1">
+    <table border="1px" id="myTable">
+        <tr>
+            <td> <textarea placeholder="Tittle..." cols="30" rows="2"></textarea></td>
+            <td>
+                <table>
+                    <!--                    <tr>-->
+                    <!--                        <button onclick="addNote()">New</button>-->
+                    <!--                    </tr>-->
+                    <tr>
+                        <button type="button" onclick="deleteNote()">Delete</button>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <textarea placeholder="Content..." cols="38" rows="8"></textarea>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

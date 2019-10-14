@@ -1,59 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <title>Debug Demo</title>
 </head>
+<style>
+    td {
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
+</style>
 <body>
-Adam
-<button onclick="Adam.eat(apple)">Eat</button>
-<input disabled id="Adamweight">
-Eva
-<button onclick="Eva.eat(apple)">Eat</button>
-<input disabled id="Evaweight">
-Apple <input disabled id="Appleweight">
 <script>
-    const Adamweight = document.getElementById("Adamweight");
-    const Evaweight = document.getElementById("Evaweight");
-    const Appleweight = document.getElementById("Appleweight");
-    let Apple = function (weight, element) {
-        this.weight = weight;
-        this.decrease = function () {
-            this.weight--;
-            this.display();
-        }
-        this.isEmpty = function () {
-            return this.weight <= 0 ? true : false;
-        }
-        this.display = function () {
-            element.value = this.weight;
+    arr=[];
+    document.write("<table border=1>")
+    for (i = 0; i <= 9; i++) {
+        document.write("<tr>")
+        arr[i] = [];
+        for (j = 0; j <= 9; j++) {
+            arr[i][j] = ".";
+            document.write("<td>" + arr[i][j]);
         }
     }
-    let Human = function (name, gender, weight, element) {
-        this.name = name;
-        this.gender = gender;
-        this.weight = weight;
-        this.element = element;
-        this.eat = function (apple) {
-            if (!apple.isEmpty()) {
-                apple.decrease();
-                this.increaseWeight();
-            } else {
-                alert("The apple is empty");
-            }
-            this.display();
-        };
-        this.increaseWeight = function () {
-            this.weight++;
-        }
-        this.display = function () {
-            this.element.value = this.weight;
-        }
-    }
+    let turn = 1;
 
-    let apple = new Apple(20, Appleweight);
-    let Adam = new Human("Adam", "Male", 80, Adamweight);
-    let Eva = new Human("Eva", "Female", 60, Evaweight);
+    function changeValue() {
+        let changeX = document.getElementById("X").value;
+        let changeY = document.getElementById("Y").value;
+        if (turn == 1) {
+            arr[changeX][changeY] = "x";
+            turn = 2;
+        } else {
+            arr[changeX][changeY] = "o";
+            turn = 1;
+        }
+    }
 </script>
 </body>
-</html>
+<html>

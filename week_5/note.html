@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="create">
+    <input id="inputTitle">
+    <textarea id="inputContent"></textarea>
+    <button type="button"
+            onclick="addNote(document.getElementById('inputTitle').value,document.getElementById('inputContent').value)">Create</button>
+</div>
+<div id="board"></div>
+</body>
+<script>
+    let StickyNote = function (color) {
+        this.id = 0;
+        this.title = "";
+        this.content = "";
+        this.color = color;
+​       this.addTitle = function (title) {
+            this.title = title;
+        };
+        this.addContent = function (content) {
+            this.content = content;
+        };
+​
+        this.getHtml = function () {
+            let str = `<div class="note"><div class="title"><input value="${this.title}" disabled>
+                        <textarea class="content" disabled>${this.content}</textarea></div></div>`;
+            return str;
+        };
+​
+    }
+​
+    let Board = function (name) {
+        this.notes = [];
+​
+        this.addNote = function (note) {
+            note.id = this.notes.length;
+            this.notes.push(note);
+        }
+        this.displayNote = function (board) {
+            board.innerHTML = "";
+            for (let i = 0; i < this.notes.length; i++) {
+                board.innerHTML += this.notes[i].getHtml() + `<button type="button" onclick="deleteNote(${i})">Delete<button`;
+            }
+        }
+        this.deleteNote = function (index) {
+            this.notes.splice(index, 1);
+        }
+    }
+    let board = new Board("Quan ly viec nha");
+    let display = document.getElementById("board");
+​
+    function addNote(title, content) {
+        let note = new StickyNote("green");
+        note.addTitle(title);
+        note.addContent(content);
+        board.addNote(note);
+        board.displayNote(display);
+    }
+
+    function deleteNote(index) {
+        board.deleteNote(index);
+        board.displayNote(display);
+    }
+</script>
+</html>
