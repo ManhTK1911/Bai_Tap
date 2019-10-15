@@ -36,7 +36,11 @@ textarea {
     background: aqua;
 }
 
-#Title {
+#inputContent {
+    background: aqua;
+}
+
+#inputTitle${this.id} {
     background: aqua;
 }
 

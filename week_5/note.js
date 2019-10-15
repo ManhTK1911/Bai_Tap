@@ -13,7 +13,7 @@ let StickyNote = function () {
 <table border="1px">
     <tr>
         <td>
-            <textarea id="inputTitle${this.id}" rows="2" cols="30" disabled>${this.title}</textarea>
+            <textarea  class="title" id="inputTitle${this.id}" rows="2" cols="30" disabled>${this.title}</textarea>
         </td>     
             <td>
                 <table>
