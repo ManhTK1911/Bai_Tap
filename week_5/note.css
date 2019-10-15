@@ -1,18 +1,38 @@
-#container {
-    padding: 15px;
+body {
+    background: darkkhaki;
 }
 
-#noteBody {
-    height: 200px;
+h1 {
+    background: #d67406;
+    text-align: center;
 }
 
-select {
-    height: 200px!important;
+#btn1 {
+    width: 60px;
+    height: 30px;
+    background: #2821f6;
+    text-align: center;
 }
 
-#noteDisplay {
-    padding: 20px;
-    border: 1px solid #121212;
-    background-color: aliceblue;
-    border-radius: 5px ;
+#btn2 {
+    width: 30px;
+    height: 20px;
+    background: #f61200;
+    text-align: center;
+}
+
+textarea {
+    background: chartreuse;
+}
+
+#inputTitle {
+    background: aqua;
+}
+
+#Title {
+    background: aqua;
+}
+
+table {
+    background: chocolate;
 }
