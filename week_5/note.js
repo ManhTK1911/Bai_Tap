@@ -9,15 +9,26 @@ let StickyNote = function () {
         this.content = content;
     };
     this.getHtml = function () {
-        let str = `<table border="2px">
+        let str = `
+<table border="1px">
     <tr>
         <td>
-            <textarea id="Title" rows="2" cols="25" disabled>${this.title}</textarea>
-        </td>
+            <textarea id="inputTitle${this.id}" rows="2" cols="30" disabled>${this.title}</textarea>
+        </td>     
+            <td>
+                <table>
+                     <tr>
+                        <button type="button" id="btn2" onclick="changeNote(${this.id})">+</button><br>
+                     </tr>
+                     <tr>
+                        <button type="button" id="btn3" onclick="deleteNote(${this.id})">x</button>
+                     </tr>
+                </table>
+            </td>
     </tr>
     <tr>
         <td>
-            <textarea rows="7" cols="25" disabled>${this.content}</textarea>
+            <textarea id="inputContent${this.id}" rows="8" cols="30" disabled>${this.content}</textarea>
         </td>
     </tr>
 </table>`;
@@ -33,7 +44,7 @@ let Board = function (name) {
     this.displayNote = function (board) {
         board.innerHTML = "";
         for (let i = 0; i < this.notes.length; i++) {
-            board.innerHTML += this.notes[i].getHtml() + `<button type="button" id="btn2" onclick="deleteNote(${i})">x<button`;
+            board.innerHTML += this.notes[i].getHtml();
         }
     };
     this.deleteNote = function (index) {
@@ -43,6 +54,12 @@ let Board = function (name) {
 
 let board = new Board();
 let display = document.getElementById("board");
+
+function changeNote(index) {
+    document.getElementById('inputTitle' + index).disabled = false;
+    document.getElementById('inputContent' + index).disabled = false;
+
+}
 
 function addNote() {
     let note = new StickyNote();
